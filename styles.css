@@ -10,8 +10,8 @@ body {
 /* Grid Layout */
 main {
     display: grid;
-    grid-template-columns: 1fr minmax(auto, 1200px) 1fr; /* Center main content */
-    gap: 20px;
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+    gap: 20px
 }
 
 /* Taskbar (Navbar) */
@@ -25,8 +25,26 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width:1200px;
+    margin: 0 auto;
     padding: 10px 50px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
 }
 
 .navbar .logo {
@@ -58,6 +76,13 @@ main {
 .navbar ul li a:hover {
     background-color: #f39c12;
     border-radius: 4px;
+}
+
+/* Menu Icon for Mobile */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 header {
@@ -208,29 +233,54 @@ footer {
 }
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Adjust the flex direction on smaller screens */
+    /* Show the menu icon and hide the navigation links */
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Toggle visibility of the menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        text-align: left;
+    }
+
     .about-container {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .avatar {
-        margin-right: 0; /* Remove right margin on smaller screens */
+        margin-bottom: 20px;
     }
-    
+
     .about-container p {
-        font-size: 1rem; /* Adjust font size for smaller screens */
-        padding: 0 10px; /* Add some padding */
+        font-size: 1rem;
+        padding: 0 10px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Further adjustments for very small screens */
     .avatar {
         width: 120px;
         height: 120px;
     }
-    
+
     .about-container p {
         font-size: 0.9rem;
     }
