@@ -63,6 +63,7 @@ header {
     justify-content: left;
     color: white;
     position: relative;
+    z-index: 1000;
 }
 
 section {
