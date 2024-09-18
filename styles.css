@@ -7,6 +7,12 @@ body {
     color: #333;
     line-height: 1.6;
 }
+/* Grid Layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr; /* Center main content */
+    gap: 20px;
+}
 
 /* Taskbar (Navbar) */
 .navbar {
@@ -55,6 +61,7 @@ body {
 }
 
 header {
+    grid-column: 1 / -1;
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('/img/anh\ 2.jpg') no-repeat right center/cover;
@@ -77,6 +84,11 @@ h2 {
     color: lightgrey;
     text-align: center;
     margin-bottom: 30px;
+}
+/* Main Content Styling */
+main {
+    margin-top: 60px; /* Space for fixed header */
+    grid-column: 2; /* Center main content */
 }
 /* Sections */
 section {
@@ -115,6 +127,7 @@ h2 {
     object-fit: cover; 
     margin-right: 20px; 
     margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
 p {
@@ -122,6 +135,7 @@ p {
     color: #666;
     line-height: 1.6;
     flex: 1;
+    max-width: 600px; /* Limit paragraph width */
 }
 
 #skills {
@@ -186,6 +200,7 @@ p {
 
 /* Footer */
 footer {
+    grid-column: 1 / -1;
     background-color: #333;
     color: #fff;
     padding: 20px;
