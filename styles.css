@@ -187,3 +187,31 @@ footer {
     padding: 20px;
     text-align: center;
 }
+@media (max-width: 768px) {
+    /* Adjust the flex direction on smaller screens */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .avatar {
+        margin-right: 0; /* Remove right margin on smaller screens */
+    }
+    
+    .about-container p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        padding: 0 10px; /* Add some padding */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .about-container p {
+        font-size: 0.9rem;
+    }
+}
