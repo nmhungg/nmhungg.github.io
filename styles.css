@@ -90,7 +90,7 @@ header h1 {
     justify-content: center;
     max-width: 100%; /* Ensure it takes full width */
     flex-wrap: wrap;
-    text-align: left;
+    text-align: center;
     padding: 20px;
 }
 
